@@ -21,7 +21,7 @@ import psychic from "../../assets/typepokemon/psychic.svg"
 import rock from "../../assets/typepokemon/steel.svg"
 import steel from "../../assets/typepokemon/steel.svg"
 import water from "../../assets/typepokemon/water.svg"
-import pokeball from "../../assets/pokeball.gif"
+import poke from "../../assets/poke.gif"
 
 function Card(props) {
 
@@ -75,7 +75,7 @@ function Card(props) {
     return (
       <>
 
-      {context.isLoading ? <Loading src={pokeball} alt="Loading"/>:
+      {context.isLoading ? <Loading src={poke} alt="Loading"/>:
                       <MainCard key={props.pokemon.id}
                       colorCard={colorCard}>
       
