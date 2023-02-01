@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalContext";
 import CardDetails from "../../components/CardDetails/CardDetails"
 import Header from "../../components/Header/Header";
-import pokeball from "../../assets/pokeball.gif"
+import poke from "../../assets/poke.gif"
 import { MainContainer, DisplayCards } from "../../constants/stylePages";
 
 function Details() {
@@ -20,7 +20,7 @@ function Details() {
           <div><h1>Detalhes</h1></div>
           <DisplayCards>
 
-          {context.isLoading ? <img src={pokeball} alt="Loading"/>
+          {context.isLoading ? <img src={poke} alt="Loading"/>
           :
           context.detailPokemon.filter((pokemon)=> pokemon.name === pokeName).map((pokemon)=>(
                 <CardDetails

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import fundocard from "../../assets/pngwing.svg"
+import card from "../../assets/wing.svg"
 
 export const MainCard = styled.div`
     width: 440px;
@@ -9,7 +9,7 @@ export const MainCard = styled.div`
     font-family: "Inter";
     color: white;
     margin-top: 30px;
-    background-image: url(${fundocard});
+    background-image: url(${card});
     background-size: 50% auto;
     background-repeat: no-repeat;
     background-position: top right;

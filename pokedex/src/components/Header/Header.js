@@ -1,4 +1,4 @@
-import logo from "../../assets/logo-pokedex.svg"
+import logo from "../../assets/pokedex.svg"
 import { useContext, useEffect } from "react";
 import {MainHeader, ButtonPokedex, ButtonDeletePokemon, AddPokemon} from "./styleHeader"
 import { useNavigate, useLocation, useParams } from "react-router-dom";
@@ -45,7 +45,7 @@ function Header() {
             '' 
            :<a onClick={(()=>goToHome(navigate))}>Todos os Pokémons</a>}
           </div>
-          <div><img src={logo} alt="logo-pokedex"/></div>
+          <div><img src={logo} alt="logo"/></div>
           {location.pathname === `/${pokeName}` ?
           <div>
             {searchPokedex()}

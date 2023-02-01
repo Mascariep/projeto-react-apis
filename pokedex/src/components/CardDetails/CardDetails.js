@@ -19,7 +19,7 @@ import psychic from "../../assets/typepokemon/psychic.svg"
 import rock from "../../assets/typepokemon/steel.svg"
 import steel from "../../assets/typepokemon/steel.svg"
 import water from "../../assets/typepokemon/water.svg"
-import pokeball from "../../assets/pokeball.gif"
+import poke from "../../assets/poke.gif"
 
 function CardDetails(props) {
 
@@ -70,12 +70,12 @@ function CardDetails(props) {
     
     return (
       <>
-    {context.isLoading ? <img src={pokeball} alt="Loading"/>
+    {context.isLoading ? <img src={poke} alt="Loading"/>
     :
     <MainCardDetails
       colorCard={colorCard}>
 
-        {/* SEÇÃO SPRITES POKEMON */}
+       
         <DisplayPokemon>
             <div>
                 <img src={props.pokemon.sprites?.front_default} alt={props.pokemon?.name}/>
@@ -86,12 +86,12 @@ function CardDetails(props) {
 
         </DisplayPokemon>
 
-        {/* SEÇÃO STATUS POKEMON */}
+        
         <DisplayBaseStats>
             <div>
             <h2>Base stats</h2>
 
-            {/* Barra de progresso Base Stats */}
+           
             {props.pokemon?.stats?.map((status)=>(
                 <p><span>{status.stat.name.replace("hp","HP").replace("special-attack","Sp.Atk").replace("special-defense","Sp.Def ")}</span><span>{status.base_stat}</span><BarStats stats={status.base_stat}><div></div></BarStats></p>
             ))}
@@ -106,7 +106,7 @@ function CardDetails(props) {
             </div>
         </DisplayBaseStats>
 
-        {/* SEÇÃO NOME/TIPO E MOVES POKEMON */}
+        
         <DisplayNameMove>
             <div>
                 <h3>#{props.pokemon?.id < 10 ? '0' + String(props.pokemon?.id) : props.pokemon?.id}</h3>
@@ -163,7 +163,7 @@ function CardDetails(props) {
             </div>
         </DisplayNameMove>
 
-        {/* SEÇÃO ARTE OFICIAL POKEMON */}
+        
         <DisplaySpritePokemon>
             <img src={props.pokemon?.sprites?.other['official-artwork'].front_default} alt="pokemon"/>
         </DisplaySpritePokemon>
