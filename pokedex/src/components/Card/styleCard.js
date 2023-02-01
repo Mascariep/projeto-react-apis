@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import card from "../../assets/wing.svg"
+import card from "../../assets/pngwing.svg"
 
 export const MainCard = styled.div`
     width: 440px;

@@ -17,7 +17,6 @@ function Header() {
   const thisPokemon = context.detailPokemon.find(pokemon => pokemon.name === pokeName)
   const isInPokedex = context.pokedex.find(pokemon => pokemon.name === pokeName)
 
-
   const searchPokedex = ()=>{
     switch (location.pathname) {
       case "/":
@@ -43,7 +42,7 @@ function Header() {
           <div>
             {location.pathname === "/" ?
             '' 
-           :<a onClick={(()=>goToHome(navigate))}>Todos os Pokémons</a>}
+          :<a onClick={(()=>goToHome(navigate))}>Todos os Pokémons</a>}
           </div>
           <div><img src={logo} alt="logo"/></div>
           {location.pathname === `/${pokeName}` ?
