@@ -8,23 +8,16 @@ import Modal from './components/Modal/Modal'
 
 function App() {
 
-  //Variavel para armazenar pokemons
-  //Cada Pokemon está em um objeto. Irei armazená-los em um Array
   const [pokemons, setPokemons] = useState([])
 
-  //Variável para armazenar pokemons na pokedex
   const [pokedex, setPokedex] = useState([])
 
-  //Variavel utilizada para armazenar status de loading
   const [isLoading, setIsLoading] = useState(false)
 
-  //Variavel para armazenar os detalhes do pokemon
   const [detailPokemon, setDetailPokemon] = useState([])
 
-  //Variável para verificar se o Modal será exibido (true) ou não (false)
   const [showModal, setShowModal] = useState(false)
 
-  //Variável para verificar a ação que foi executada sobre o Pokemon para exibir o Modal
   const [action, setAction] = useState("")
 
   useEffect(()=>{
@@ -35,22 +28,19 @@ function App() {
   let i = 1  
   setIsLoading(true)
   
-  //Além de servir como apoio, ela elimina qualquer duplicidade de cadastro pelo Set.
   const auxPokemon = [...new Set(pokemons)]
 
-  //Condicional criada para que a função browserPokemon seja atualizada toda vez que o usuário entrar na Home.
   if (pokemons.length > 0){
     return
   }else{
   
   while (i <= 20){
     try{        
-        //Dentro da pasta de sprites, terá o sprite dos games, que também vou utilizar em detalhes.
         const response = await axios.get(`${BASE_URL}/${i}`)
         auxPokemon.push(response.data)
         setPokemons(auxPokemon)
         setDetailPokemon(auxPokemon)
-        console.log(`${response.data.name} adicionado com sucesso a base!`)      
+        console.log(`${response.data.name} adicionado a base!`)      
     }catch(error){
         console.log(`Erro!${error.data.name} não foi adicionado a base.`)
         console.log(error)
@@ -61,7 +51,7 @@ function App() {
     }
   }
 
-  //Função para acrescentar pokemon na Pokelist.
+
   function addPokemonPokedex (pokemonAdd){
     setShowModal(true)
     setAction("add")
@@ -76,7 +66,6 @@ function App() {
 
   }
 
-  //Remover pokemon da Pokedex
   function removePokemonPokedex (pokemonAdd){
     setShowModal(true)
     setAction("remove")
