@@ -28,43 +28,43 @@ function CardDetails(props) {
     const colorCard = ()=>{
         switch (props.pokemon.types[0].type.name) {
             case 'grass':
-            return '#729F92'           
-            case 'fire': 
-            return '#EAAB7D'           
-            case 'water':
-            return '#71C3FF'             
-            case 'poison':
-            return '#AD61AE'    
-            case 'flying':
-            return '#6892B0'   
-            case 'bug':
-            return '#76A866'  
-            case 'normal':
-            return '#BF9762'   
-            case 'dark':
-            return '#5C5365'   
-            case 'dragon':
-            return '#0A6CBF'   
-            case 'eletric':
-            return '#F4D23B'    
-            case 'eletric':
-            return '#F4D23B'   
-            case 'eletric':
-            return '#F4D23B'   
-            case 'eletric':
-            return '#F4D23B'   
-            case 'eletric':
-            return '#F4D23B'              
-            case 'eletric':
-            return '#F4D23B'   
-            case 'eletric':
-            return '#F4D23B'   
-            case 'eletric':
-            return '#F4D23B'   
-            case 'eletric':
-            return '#F4D23B'                         
+                return '#729F92'
+            case "bug":
+                return '#76A866';
+            case "dark":
+                return '#5C5365';
+            case "dragon":
+                return '#0A6CBF';
+            case "electric":
+                return '#FFC222';
+            case "fairy":
+                return '#EC8FE6';
+            case "fighting":
+                return '#CE4069';
+            case "fire":
+                return '#EAAB7D';
+            case "flying":
+                return '#6892B0';
+            case "ghost":
+                return '#5269AC';
+            case "ground":
+                return '#D97745';
+            case "ice":
+                return '#74CEC0';
+            case "normal":
+                return '#BF9762';
+            case "poison":
+                return '#AD61AE';
+            case "psychic":
+                return '#F67176';
+            case "rock":
+                return '#C7B78B';
+            case "steel":
+                return '#BBBBBB';
+            case "water":
+                return '#71C3FF';     
             default:
-            return '#729F92'
+                return '#729F92'
         }
     }
     
@@ -113,20 +113,10 @@ function CardDetails(props) {
                 <h1>{props.pokemon?.name}</h1>
                 <p>{props.pokemon?.types?.map((type)=> {
                             switch (type.type.name) {
-                                case 'grass':
-                                    return <img src={grass} alt={type.type.name}/>
-                                    case 'fire': 
-                                    return <img src={fire} alt={type.type.name}/>
-                                    case 'water':
-                                    return <img src={water} alt={type.type.name}/>
-                                    case 'poison':
-                                    return <img src={poison} alt={type.type.name}/>  
-                                    case 'flying':
-                                    return <img src={flying} alt={type.type.name}/>  
+                                    case 'grass':
+                                    return <img src={grass} alt={type.type.name}/>                           
                                     case 'bug':
-                                    return <img src={bug} alt={type.type.name}/>
-                                    case 'normal':
-                                    return <img src={normal} alt={type.type.name}/>   
+                                    return <img src={bug} alt={type.type.name}/>                                      
                                     case 'dark':
                                     return <img src={dark} alt={type.type.name}/>   
                                     case 'dragon':
@@ -134,21 +124,31 @@ function CardDetails(props) {
                                     case 'eletric':
                                     return <img src={eletric} alt={type.type.name}/>  
                                     case 'fairy':
-                                    return <img src={fairy} alt={type.type.name}/>  
+                                    return <img src={fairy} alt={type.type.name}/>                                       
                                     case 'fighting':
-                                    return <img src={fighting} alt={type.type.name}/>   
+                                    return <img src={fighting} alt={type.type.name}/>
+                                    case 'fire': 
+                                    return <img src={fire} alt={type.type.name}/>                                    
+                                    case 'flying':
+                                    return <img src={flying} alt={type.type.name}/>
                                     case 'ghost':
                                     return <img src={ghost} alt={type.type.name}/>   
                                     case 'ground':
                                     return <img src={ground} alt={type.type.name}/>              
                                     case 'ice':
-                                    return <img src={ice} alt={type.type.name}/>   
+                                    return <img src={ice} alt={type.type.name}/> 
+                                    case 'normal':
+                                    return <img src={normal} alt={type.type.name}/> 
+                                    case 'poison':
+                                    return <img src={poison} alt={type.type.name}/>   
                                     case 'psychic':
                                     return <img src={psychic} alt={type.type.name}/>   
                                     case 'rock':
                                     return <img src={rock} alt={type.type.name}/>   
                                     case 'steel':
-                                    return <img src={steel} alt={type.type.name}/>                           
+                                    return <img src={steel} alt={type.type.name}/>
+                                    case 'water':
+                                    return <img src={water} alt={type.type.name}/>                           
                                     default:
                                     return <img src={""} alt={type.type.name}/>
                             }
@@ -163,7 +163,6 @@ function CardDetails(props) {
             </div>
         </DisplayNameMove>
 
-        
         <DisplaySpritePokemon>
             <img src={props.pokemon?.sprites?.other['official-artwork'].front_default} alt="pokemon"/>
         </DisplaySpritePokemon>
